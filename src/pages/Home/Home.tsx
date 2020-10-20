@@ -1,62 +1,47 @@
 import React from 'react'
+import Slider from 'react-slick'
 
 //Components
-import { PageBanner } from '../../components/PageBanner/PageBanner'
-import { ProductBox, ProductBoxProps } from '../../components/ProductBox/ProductBox'
 
 //styles
 import './Home.scss'
-import homeBanner from './../../assets/images/home_banner.jpg'
 
-const products: ProductBoxProps[] = [
-    {
-        id:1,
-        title: 'Product 1',
-        image: homeBanner,
-        price: "12.99"
-    },
-    {
-        id:2,
-        title: 'Product 2',
-        image: homeBanner,
-        price: "19.99"
-    },
-    {
-        id:3,
-        title: 'Product 3',
-        image: homeBanner,
-        price: "22.99",
-        description:'Lorem ipsum...'
-    }
-]
+import bannerSlider from './../../assets/images/bannerSlider.jpg';
+import bannerSlider_1 from './../../assets/images/bannerSlider_1.jpg'
+
 
 export const Home = () => {
+    const settings = {
+        dots: false,
+        fade: true,
+        infinite: false,
+        slidesToShow: 1,
+        arrows: true,
+    }
     return (
         <div className="Home">
-            <section className="block_section">
-                <PageBanner>
-                    <img src={homeBanner} alt="Home Banner"/>
-                </PageBanner>              
-            </section>
-            <section className="block_section">
+            <div className="block_section">
                 <div className="container">
-                    <div className="row has_gutter">
-                        {products.map((product:ProductBoxProps) => {
-                            return (
-                                <div className="column-4" key={product.id}>
-                                    <ProductBox
-                                        id={product.id}
-                                        title={product.title}
-                                        image={product.image}
-                                        price={product.price}
-                                        description={product.description}
-                                    />
+                    <Slider {...settings}>
+                        <div>
+                            <div className="banner">
+                                <img src={bannerSlider} alt="Banner" />
+                                <div className="banner__content">
+                                    <h3>Sale of the summer collection</h3>
                                 </div>
-                            )
-                        })}
-                    </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="banner">
+                                <img src={bannerSlider_1} alt="Banner" />
+                                <div className="banner__content">
+                                    <h3>Sale of the summer collection</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </Slider>
                 </div>
-            </section>
-        </div>
+            </div>
+        </div >
     )
 }
