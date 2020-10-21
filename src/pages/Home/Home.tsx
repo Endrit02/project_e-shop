@@ -16,6 +16,7 @@ import ProdBox_3 from './../../assets/images/ProdBox_3.png'
 import ProdBox_4 from './../../assets/images/ProdBox_4.png'
 import { Link } from 'react-router-dom';
 import { isBigIntLiteral } from 'typescript';
+import { Newsletter } from '../../components/Newsletter/Newsletter';
 
 const products: ProductBoxProps[] = [
     {
@@ -115,6 +116,7 @@ export const Home = () => {
                     </div>
                 </div>
             </section>
+        <Newsletter/>
         </div >
     )
 }

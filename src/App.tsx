@@ -16,6 +16,7 @@ import { ErrorPage } from './pages/ErrorPage/ErrorPage';
 
 //Styles
 import './App.scss';
+import { Newsletter } from './components/Newsletter/Newsletter';
 
 function App() {
   return (
